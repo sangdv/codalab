@@ -20,3 +20,9 @@ To create .zip package, run the following command
 ```
 
 After packaging, upload the file competition.zip to the AIHUB platform
+
+## Testing on AIHUB.VN
+1. Create account on aihub.vn. It is recommended to have a suffix `_organizers` (e.g., soict_organizers) to differentiate from participant accounts.
+2. `Login` -> go to `Competition that I am running`
+3. `Create new challenge` -> Upload a new bundle.
+4. Then enjoy the fruit!!!

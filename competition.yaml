@@ -1,8 +1,11 @@
-title: AIHub Bundle Example
-description: Some description here
+title: Mobile-Captured Image Document Recognition for Vietnamese Receipts (MC-OCR)
+description: In this competition, we would like to tackle a problem of receipt recognition analysis i.e., the text recognition of Vietnamese receipts. The competition task aims at extracting required fields in Vietnamese receipts captured by mobile devices.
 image: logo.png
-has_registration: True
-end_date: 2020-11-30
+has_registration: true
+force_submission_to_leaderboard: false
+disallow_leaderboard_modifying: false
+enable_detailed_results: false
+end_date: 2021-01-05
 html:
     overview: overview.html
     evaluation: evaluation.html
@@ -13,50 +16,61 @@ phases:
         phasenumber: 1
         label: "Warm Up"
         color: green
-        start_date: 2020-10-21
-        max_submissions: 10
+        start_date: 2020-12-06
+        max_submissions: 999
+        max_submissions_per_day: 10
         scoring_program: scoring_program.zip
         reference_data: warmup_ground_truth.zip
         datasets:
             1:
-                name: Training set
-                url: https://example.com/
+                name: Training for verifying quality of receipts and recognize receipts.
+                url: <url>
             2: 
+                name: Training for verifying quality of receipts and recognize receipts.
+                url: <url>
+            3:
                 name: Test set
-                url: https://example.com/
+                url: <url>
     2:
         phasenumber: 2
         label: "Public Test"
         color: yellow
-        start_date: 2020-10-26
-        max_submissions: 10
+        start_date: 2020-12-10
+        max_submissions: 999
+        max_submissions_per_day: 10
         scoring_program: scoring_program.zip
         reference_data: public_ground_truth.zip
         datasets:
             1:
-                name: Training set
-                url: https://example.com/
-            2: 
-                name: Test set
-                url: https://example.com/
+                name: Train data
+                url: <url>
     3:
         phasenumber: 3
         label: "Private Test"
         color: orange
-        start_date: 2020-11-28
-        max_submissions: 5
+        start_date: 2021-01-03
+        max_submissions: 999
+        max_submissions_per_day: 5
         scoring_program: scoring_program.zip
         reference_data: private_ground_truth.zip
 
 
 leaderboard:
     leaderboards:
-        RESULTS: &RESULTS
-            label: Results
+        RMSE: &RMSE
+            label: Task 1 (RMSE)
+            rank: 2
+        CER: &CER
+            label: Task 2 (CER)
             rank: 1
     columns:
-        ROC:
-            leaderboard: *RESULTS
-            label: ROC
+        RMSE:
+            leaderboard: *RMSE
+            label: RMSE
+            rank: 2
+            sort: asc
+        CER:
+            leaderboard: *CER
+            label: CER
             rank: 1
-            numeric_format: 1
+            sort: asc
